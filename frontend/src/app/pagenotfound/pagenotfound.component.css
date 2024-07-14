@@ -1,0 +1,25 @@
+/* common css  */
+*
+{
+color: black;
+}
+h1
+{
+    margin-left: 48%;
+}
+h2
+{
+    margin-left: 46%;
+}
+
+/* error css  */
+
+.error-details
+{
+    margin-left:40%;
+}
+.error-action
+{
+    margin-left: 45%;
+    /* margin-top: 3%; */
+}

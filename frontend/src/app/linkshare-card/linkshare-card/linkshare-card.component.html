@@ -1,0 +1,72 @@
+<!-- card component which is shared through link  -->
+<html>
+<body>
+  <div class="showcard_main">
+    <div class="container d-flex justify-content-center mt-2 mb-2">
+      <div class="card">
+        <div class="top-container">
+          <div class="ml-3 row">
+            <div class="col-3">
+              <img src="{{data.imgSources}}" class="img-fluid profile-image" width="70" />
+            </div>
+            <div class="col-9">
+              <h5 class="name cardtext_col">
+                {{ data.title }}
+              </h5>
+              <p class="mail">
+                {{ data.email }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-5">
+            <h5 class="fontsize">
+              <b>Category:</b>
+              <span>
+                {{ data.category }}
+              </span>
+            </h5>
+          </div>
+          <div class="col-7">
+            <h5 class="fontsize">
+              <b>Contact:</b>
+              <span>
+                {{ data.phoneNumber }}
+              </span>
+            </h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <h5 class="fontsize mb-0">
+              <b>Address:</b>
+            </h5>
+            <span>
+              {{ data.address }}
+            </span>
+          </div>
+          <div class="col-6">
+            <h5 class="fontsize mb-0">
+              <b>Description:</b>
+            </h5>
+            <span>
+              {{ data.discription }}
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col-8">
+            <a href="{{data?.twitter}}"><i class="fa-brands fa-twitter soc_icons"></i></a>
+            <a href="{{data?.linkdinLink}}"><i class="fa-brands fa-linkedin-in soc_icons"></i></a>
+            <a href="{{data?.instagramLink}}"><i class="fa-brands fa-instagram soc_icons"></i></a>
+            <a href="{{data?.websiteLink}}">{{data?.websiteLink}}</a>
+          </div>
+          <div class="col-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

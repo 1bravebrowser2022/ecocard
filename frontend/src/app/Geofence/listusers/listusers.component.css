@@ -1,0 +1,59 @@
+/* scroll div css  */
+.scrolldiv {
+  max-height: 300px;
+  overflow-y: auto;
+}
+h1 {
+  font-weight: bold;
+}
+
+/* checkbox css */
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:hover + label:before {
+  opacity: 0.5;
+}
+.checkbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #111;
+  font-weight: 600;
+}
+.checkbox:before {
+  z-index: 15;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 20px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #444;
+  height: 20px;
+}
+input[type="checkbox"]:checked + label {
+  color: #000;
+}
+input[type="checkbox"]:checked + label:before {
+  border-color: transparent;
+  border-left-color: #28477e;
+  border-bottom-color: #28477e;
+  transform: rotate(-50deg);
+  width: 22px;
+  height: 12px;
+  top: 3px;
+}
+.btn
+{
+  background-color: #012970;
+  color: white;
+}

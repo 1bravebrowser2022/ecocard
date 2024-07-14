@@ -1,0 +1,45 @@
+  <!-- adding header  -->
+<app-header></app-header>
+
+<!-- Signup and SignIn component  -->
+
+<div class="auth-body">
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+			<!-- Signup  -->
+			<div class="signup">
+				<form class="form" #signupForm="ngForm">
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="txt" placeholder="User name" required #name="ngModel" [(ngModel)]="signupobj.name">
+					<span *ngIf="name.invalid && name.touched" style="color: red; padding-left: 59px;">*Please enter a valid Input</span>
+
+					<input type="email" name="email" placeholder="Email" required 	#email="ngModel" [(ngModel)]="signupobj.email">
+					<span *ngIf="email.invalid && email.touched" style="color: red; padding-left: 59px;">*Please enter a valid Input</span>
+
+					<input type="password" name="pswd" placeholder="Password" required #pass="ngModel" [(ngModel)]="signupobj.password">
+					<span *ngIf="pass.invalid && pass.touched" style="color: red; padding-left: 59px;">*Please enter a valid Input</span>
+
+					<input type="numberr" name="contact" placeholder="Contact" required #contact="ngModel" [(ngModel)]="signupobj.contect">
+					<span *ngIf="contact.invalid && contact.touched" style="color: red; padding-left: 59px;">*Please enter a valid Input</span>
+					
+					<button (click)="onSignUp()" [disabled]="signupForm.invalid">Sign up</button>
+				</form>
+			</div>
+			<!-- SignIn  -->
+			<div class="login">
+				<form #loginForm="ngForm" method="post">
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Email" required #emaill="ngModel" [(ngModel)]="loginObj.email" style="margin: 15px auto;">
+					<span *ngIf="emaill.invalid && emaill.touched" style="color: red; padding-left: 80px;">*Please enter a valid Input</span>
+
+					<input type="password" name="pswd" minlength="8" placeholder="Password" required #password="ngModel" [(ngModel)]="loginObj.password" style="margin: 15px auto;">
+					<span *ngIf="password.invalid && password.touched" style="color: red; padding-left: 80px;">*Please enter a valid Input</span>
+
+					<button (click)="onLogin()" class="loginbtn" [disabled]="loginForm.invalid">Login</button>
+
+					<p class="forgot">Forgot Password??  <a routerLink="/forgotPassword">Click Here</a></p>
+				</form>
+			</div>
+	</div>
+</div>
+<app-footer></app-footer>

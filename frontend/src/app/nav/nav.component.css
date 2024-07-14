@@ -1,0 +1,74 @@
+/* common css  */
+* {
+  color: white;
+  text-decoration: none;
+}
+
+/* sidenav component css */
+.sidenav-container {
+  height: 100%;
+  background-color: var(--lightbackground);
+}
+
+.sidenav {
+  width: 220px;
+}
+.sidenav,
+.mat-expansion-panel {
+  background-color: #15213b;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.menuiconcol_col {
+  color: black;
+}
+.linkhover.hover {
+  background-color: white;
+}
+.dashbordbody {
+  background-color: #f7f7f8;
+}
+.mat-expantion-panel {
+  align-items: left;
+}
+.iconspace {
+  margin-right: 60%;
+}
+/* .header {
+  background-color: #f7f7f8;
+} */
+.menuicon {
+  color: black;
+}
+
+.container.active{
+  padding: 7px;
+  background-color: #061433;
+  border-left: 1px solid #f7f7f8;
+  margin-top:2px;
+}
+
+.container.active :hover{
+  margin-bottom: 0px;
+}
+
+mat-list-item :hover{
+  margin-bottom: 2px;
+}
+
+.bgbody
+{
+  background-image: url(./../../assets/images/bg3.webp);
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size:cover;
+  height: 100%;
+}

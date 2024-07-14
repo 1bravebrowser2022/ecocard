@@ -1,0 +1,68 @@
+/* common css  */
+*
+{
+	color: black;
+	text-decoration: none;
+}
+body
+{
+	background-color: #eee;
+}
+/* card css */
+.card
+{
+	background-color: #edecea;
+	width: 400px;
+	border-radius: 5%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 2rem !important;
+}
+.top-container{
+	display: flex;
+	align-items: center;
+}
+.logo-img{
+	border-radius: 10px;
+    margin-right: 5%;
+}
+.mail{
+	font-size: 14px;
+	color: grey;
+	position: relative;
+	top: 2px;
+}
+.fontsize
+{
+	font-size: 15px;
+}
+.cardtext_col
+{
+    font-weight: bold;
+	font-size: 30px;
+	 color: #012970
+}
+.soc_icons
+{
+	margin-left: 4%;
+	color: #012970;	
+}
+.mainsocicon
+{
+	margin-left: 30%;
+}
+.share_icon
+{
+	color: white;
+}
+.share_text
+{
+	color:white;
+}
+.showcard_main {
+  padding: 5%;
+}
+.btn {
+  margin-left: 25%;
+  padding-left: 12%;
+  padding-right: 12%;
+}

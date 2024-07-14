@@ -1,0 +1,23 @@
+<!-- in this component listing all Available users in geofence area  -->
+<div class="container" style="padding: 10%;">
+    <div class="row">
+        <div class="col-12 w-100">
+            <h1>List Of Available Users</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-18">
+            <form #listOfUsers="ngForm" class="scrolldiv" (ngSubmit)="closeDialog()">
+                <div class="checkbox-container" *ngFor="let user of toppingList">
+                    <input type="checkbox" name="{{user.reciverId}}" [(ngModel)]="user.reciverId" multiple
+                        id="{{user.reciverId}}" checked />
+                    <label class="checkbox" name="" for="{{user.reciverId}}">{{user.name}}</label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn mt-5 align-items-md-baseline" type="submit" (click)="updateRecivedCardsOfUser(listOfUsers.value)"
+            >Send</button>
+    </div>
+</div>

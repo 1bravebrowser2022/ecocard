@@ -1,0 +1,109 @@
+<!-- this component for View, update and delete user profile -->
+<div class="main-conten">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-5"></div>
+      <div class="col-lg-4 mt-4">
+        <h1 style="color:#012970; font-weight: bold;">Your Profile</h1>
+      </div>
+      <div class="col-lg-3"></div>
+    </div>
+    <div class="row">
+      <!-- Edit Profile  Starts-->
+      <div class="col-md-8 editprofile">
+        <div class="card p-3">
+          <div class="header">
+            <h2 class="title form-group">Edit Profile</h2>
+          </div>
+          <div class="content">
+            <form [formGroup]="userProfileUpdaterForm">
+              <div class="row">
+                <div class="col-md-6 p-3">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input formControlName="name" type="text" class="form-control"
+                      ngModel="{{ userProfileData?.name }}" />
+                    <span class="valid" *ngIf="user && user.invalid && user.touched"><small>This field is not
+                        valid</small></span>
+                  </div>
+                </div>
+
+                <div class="col-md-6 p-3">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" formControlName="email"
+                      ngModel="{{ userProfileData?.email }}" />
+                    <span class="valid" *ngIf="email && email.invalid && email.touched"><small>This field is not
+                        valid</small></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 p-3">
+                  <div class="form-group">
+                    <label>Contact</label>
+                    <input type="text" class="form-control" formControlName="contect"
+                      ngModel="{{ userProfileData?.contect }}" />
+                    <span class="valid" *ngIf="contect && contect.invalid && contect.touched"><small>This field is not
+                        valid</small></span>
+                  </div>
+                </div>
+                <div class="col-md-6 p-3">
+                  <div class="form-group">
+                    <label>Upload Photo</label>
+                    <input type="file" (change)="imgUploader($event)" class="form-control" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 ">
+                  <button type="submit" class="btn btn-fill pull-left mt-5 rounded-pill"
+                    style="background-color:#061433; color:white; padding-left: 5%; padding-right: 5%;"
+                    [disabled]="userProfileUpdaterForm.invalid" (click)="updateUserProfile()">
+                    Update
+                  </button>
+                </div>
+                <div class="col-lg-6 col-md-6 ">
+                  <button type="submit" class="btn btn-danger btn-rounded btn-fill pull-right mt-5 rounded-pill"
+                    (click)="deleteUserProfile()"
+                    style="padding-left: 5%; padding-right: 5%;">
+                    Delete
+                  </button>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Edit Profile  Ends-->
+
+      <!-- View Profile Starts -->
+      <div class="col-md-4 viewprofile">
+        <div class="container">
+          <section class="mx-auto my-5" style="max-width: 23rem">
+            <div class="card testimonial-card mt-2 mb-3">
+              <div class="card-up aqua-gradient">
+                <div class="avatar mx-auto white pt-5 text-center">
+                  <img src="{{imgSources}}" style="width: 70%;" class="rounded-circle img-fluid " alt="User avatar" />
+
+                </div>
+              </div>
+              <div class="card-body text-center">
+                <h2 name="name" formControlName="name" class="card-title font-weight-bold">{{ userProfileData?.name }}
+                </h2>
+                <h4 class="card-subtitle" name="email" formControlName="email">{{ userProfileData?.email }}</h4>
+                <h4 class="card-subtitle" name="contect" formControlName="contect" (value)=" userProfileData?.contect">
+                  {{ userProfileData?.contect }}</h4>
+                <hr />
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- View Profile Ends -->
+
+    </div>
+  </div>
+</div>

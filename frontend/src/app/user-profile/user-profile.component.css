@@ -1,0 +1,29 @@
+/* profile page css*/
+/* .main-conten {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGHp3i39bLZhNxQkibSXDJdjrdJxzNbg-r9A&usqp=CAU');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+} */
+
+/* create profile css  */
+.form-group {
+  color: black;
+}
+.editprofile {
+  margin-top: 6%;
+}
+
+/* view profile css  */
+.viewprofile {
+  color: black;
+}
+
+.valid{
+  color: red;
+}
+
+.card
+{
+  background-color: rgba(255, 255, 255, 0.3);
+}

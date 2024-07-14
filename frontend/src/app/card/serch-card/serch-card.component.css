@@ -1,0 +1,104 @@
+/* common css  */
+* {
+  color: black;
+  text-decoration: none;
+}
+body {
+  background-color: #eee;
+}
+/* card css  */
+.card {
+  background-color: #edecea;
+  width: 400px;
+  border-radius: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 2rem !important;
+}
+.top-container {
+  display: flex;
+  align-items: center;
+}
+.logo-img {
+  border-radius: 10px;
+  margin-right: 5%;
+}
+.mail {
+  font-size: 14px;
+  color: grey;
+  position: relative;
+  top: 2px;
+}
+.fontsize {
+  font-size: 15px;
+}
+.cardtext_col {
+  font-weight: bold;
+  font-size: 30px;
+  color: #012970;
+}
+.soc_icons {
+  margin-left: 4%;
+  color: #012970;
+}
+.mainsocicon
+{
+	margin-left: 30%;
+}
+.share_icon {
+  color: white;
+}
+.share_text {
+  color: white;
+}
+
+.share_icon {
+  color: black;
+}
+.share_text {
+  color: black;
+}
+.serch-text {
+  padding: 12px 20px;
+  margin: 8px 0;
+  background-color: #ededed;
+  border: none;
+  border-radius: 5%;
+  border-bottom: 2px solid gray;
+  margin-top: 3%;
+}
+.serch-text:focus {
+  outline: none;
+}
+.searchbtn {
+  background-color: #012970;
+  padding-left: 6%;
+  padding-right:9%;
+
+}
+.test {
+  border-bottom: 2px solid #5957f9;
+}
+
+.bgbody
+{
+  background-image: url(./../../../assets/images/bg3.webp);
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size:cover;
+  height: fit-content;
+}
+.searchdiv
+{
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.searchinp
+{
+  margin-left: 5%;
+}
+.contentwrap
+{
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}

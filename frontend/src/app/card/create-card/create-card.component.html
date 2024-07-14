@@ -1,0 +1,272 @@
+<!-- create card component  -->
+<div class="bgbody">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5"></div>
+      <div class="col-lg-4 mt-5">
+        <h1 style="color: #012970; font-weight: bold">Create Your Cards</h1>
+      </div>
+      <div class="col-lg-3"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11">
+      <div class="main-conten">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-2 col-md-2 col-2"></div>
+            <div class="col-lg-10 col-md-10 col-sm-12 col-10">
+              <form [formGroup]="createCardFormData">
+                <div class="col-md-8">
+                  <div class="card p-4">
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group pb-2">
+                            <label>Business Title</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              formControlName="title"
+                              placeholder="Enter Your Business Name.."
+                            />
+                            <span
+                              class="valid"
+                              *ngIf="title && title.invalid && title.touched"
+                              ><small>This field is not valid</small></span
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group pb-2">
+                            <label>Business Category</label>
+                            <input
+                              type="text"
+                              class="form-control"
+                              formControlName="category"
+                              placeholder="Enter Business Category.."
+                            />
+                            <span
+                              class="valid"
+                              *ngIf="
+                                category && category.invalid && category.touched
+                              "
+                              ><small>This field is not valid</small></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group pb-2">
+                            <label>Email</label>
+                            <input
+                              type="email"
+                              class="form-control"
+                              placeholder="Enter Yor Business Email.."
+                              formControlName="email"
+                              required
+                            />
+                            <span
+                              class="valid"
+                              *ngIf="email && email.invalid && email.touched"
+                              ><small>This field is not valid</small></span
+                            >
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group pb-2">
+                            <label>Contact</label>
+                            <input
+                              type="number"
+                              class="form-control"
+                              placeholder="Contact"
+                              formControlName="phoneNumber"
+                            />
+                            <span
+                              class="valid"
+                              *ngIf="
+                                phoneNumber &&
+                                phoneNumber.invalid &&
+                                phoneNumber.touched
+                              "
+                              ><small>This field is not valid</small></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Upload Business Logo</label>
+                            <input
+                              type="file"
+                              (change)="imgUploader($event)"
+                              class="form-control"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Address</label>
+                            <textarea
+                              rows="5"
+                              class="form-control"
+                              placeholder="Your Address..."
+                              formControlName="address"
+                            ></textarea>
+                            <span
+                              class="valid"
+                              *ngIf="
+                                address && address.invalid && address.touched
+                              "
+                              ><small>This field is not valid</small></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Description</label>
+                            <textarea
+                              rows="5"
+                              class="form-control"
+                              placeholder="Your description..."
+                              formControlName="description"
+                            ></textarea>
+                            <span
+                              class="valid"
+                              *ngIf="
+                                description &&
+                                description.invalid &&
+                                description.touched
+                              "
+                              ><small>This field is not valid</small></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <!-- social icons  -->
+                      <div class="row">
+                        <div class="col-lg-12" style="font-weight: bold">
+                          <label>Give Your Social media Links:</label>
+                        </div>
+                      </div>
+                      <br />
+                      <!-- linkedIn  -->
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <div class="form-group">
+                            <i
+                              class="fa-brands fa-linkedin fa-2x"
+                              style="margin-left: 30%; color: #061433"
+                            ></i>
+                          </div>
+                        </div>
+                        <div class="col-lg-9">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control soc-icon"
+                              formControlName="linkdinLink"
+                              placeholder="Link.."
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- facebook  -->
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <div class="form-group">
+                            <i
+                              class="fa-brands fa-facebook-f fa-2x"
+                              style="margin-left: 30%; color: #061433"
+                            ></i>
+                          </div>
+                        </div>
+                        <div class="col-lg-9">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control soc-icon"
+                              formControlName="facebookLink"
+                              placeholder="Link.."
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- instagram  -->
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <div class="form-group">
+                            <i
+                              class="fa-brands fa-instagram fa-2x"
+                              style="margin-left: 30%; color: #061433"
+                            ></i>
+                          </div>
+                        </div>
+                        <div class="col-lg-9">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control soc-icon"
+                              formControlName="instagramLink"
+                              placeholder="Link.."
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <!-- website  -->
+                      <div class="row">
+                        <div class="col-lg-3">
+                          <div class="form-group">
+                            <i
+                              class="fa-sharp fa-solid fa-globe fa-2x"
+                              style="margin-left: 30%; color: #061433"
+                            ></i>
+                          </div>
+                        </div>
+                        <div class="col-lg-9">
+                          <div class="form-group">
+                            <input
+                              type="text"
+                              class="form-control soc-icon"
+                              formControlName="websiteLink"
+                              placeholder="Link.."
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <button
+                        type="submit"
+                        (click)="createDataProfile()"
+                        class="btn btn-success btn-fill pull-right rounded-pill mt-4"
+                        routerLink="/dashboard/mycard"
+                        style="
+                          background-color: #061433;
+                          color: white;
+                          padding-left: 5%;
+                          padding-right: 5%;
+                          border: none;
+                        "
+                        [disabled]="!createCardFormData.valid"
+                      >
+                        Create Card
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- <div class="col-lg-1 col-md-1 col-sm-0  col-1"></div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

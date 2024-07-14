@@ -1,0 +1,39 @@
+/* commmon css  */
+body {
+  font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+}
+
+/* update card form css  */
+.main-conten {
+  margin-top: 3.5%;
+  /* margin-left: 25%; */
+}
+.btn {
+  padding: 1% 5%;
+}
+input , textarea
+{
+  margin-bottom: 2%;
+}
+.card
+{
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 100%;
+}
+span  {
+  color: red;
+}
+
+label{
+  color: black;
+  font-weight: bold;
+}
+.bgbody
+{
+  background-image: url(./../../../assets/images/bg3.webp);
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size:cover;
+  height: fit-content;
+}

@@ -1,0 +1,110 @@
+<!-- this componentis for listing all card of current user  -->
+<div class="bgbody">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5"></div>
+      <div class="col-lg-4 mt-5">
+        <h1 style="color:#012970; font-weight: bold;">Your Cards</h1>
+      </div>
+      <div class="col-lg-3"></div>
+    </div>
+  </div>
+  <div class="container d-flex flex-row flex-wrap" *ngIf="flag==false">
+    <div *ngFor="let item of cardsData">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+          <div class="container d-flex justify-content-center mt-3">
+            <div class="card">
+              <div class="row mb-2">
+                <div class="col-lg-6 col-md-6 col-sm-4">
+                  <a routerLink="/dashboard/showcard/{{item._id}}">
+                    <i class="fa-solid fa-eye pull-left" (click)="openDialog(item)"></i></a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-4">
+                  <a routerLink='/dashboard/updelcard/{{item._id}}'><i class="fas fa-edit pull-right"></i></a>
+                </div>
+              </div>
+              <div class="top-container">
+                <div class="ml-2 row">
+                  <div class="col-3">
+                    <img src="{{item.imgSources}}" class="img-fluid profile-image" width="70" />
+                  </div>
+                  <div class="col-9">
+                    <h5 class="name cardtext_col">
+                      {{ item.title }}
+                    </h5>
+                    <p class="mail">{{ item.email }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-1">
+                <div class="col-lg-12 col-sm-6 col-6 justify-content-around">
+                  <h5 class="fontsize">
+                    Category:<span>{{ item.category }}</span>
+                  </h5>
+                </div>
+              </div>
+              <div class="row mt-1">
+              <div class="col-lg-12 col-sm-6 col-6 justify-content-around">
+                <h5 class="fontsize">
+                  Contact:<span>{{ item.phoneNumber }}</span>
+                </h5>
+              </div>
+            </div>
+              <div class="row">
+                <div class="col-6">
+                  <h5 class="fontsize mb-0">Address:</h5>
+                  <div class="contentwrap"><span>{{ item.address }}</span></div>
+                </div>
+                <div class="col-6">
+                  <h5 class="fontsize mb-0">Description:</h5>
+                  <span class="contentwrap">{{ item?.description }}</span>
+                </div>
+              </div>
+              <div class="row mt-2 mainsocicon">
+                <div class="col-12">
+                  <a href={{item?.linkdinLink}} target="_blank"><i class="fa-brands fa-linkedin-in soc_icons"></i></a>
+                  <a href={{item?.facebookLink}} target="_blank"><i class="fa-brands fa-facebook soc_icons"></i></a>
+                  <a href={{item?.instagramLink}} target="_blank"><i class="fa-brands fa-square-instagram  soc_icons"></i></a>
+                  <a href={{item?.websiteLink}} target="_blank"><i class="fa-sharp fa-solid fa-globe soc_icons"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- If user have 0 cards  -->
+  <div class="container" routerLink="/dashboard/createcard" style="margin-top: 8%;" *ngIf="flag==true">
+    <div class="row">
+      <div class="col-lg-4 col-md-0 col-4"></div>
+      <div class="col-lg-4 col-md-8 col-9" style="margin-left: 7%;">
+        <h2>Oops.. No Cards Available</h2> <br>
+      </div>
+      <div class="col-lg-4 col-md-4 col-0"></div>
+    </div>
+    <div class="row">
+      <div class="col-lg-5 col-md-4 col-2"></div>
+      <div class="col-lg-3 col-md-8 col-10">
+        <div>
+          <div class="card" style="width: 13rem; background-color: white;">
+            <div class="card-body">
+              <img src="./../../../assets/images/pluslogo.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-0 col-sm-2 col-0"></div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-lg-5 col-md-0 col-2"></div>
+      <div class="col-lg-3 col-md-8 col-10">
+        <h2>Design Your First Card</h2>
+      </div>
+      <div class="col-lg-4 col-md-4 col-0"></div>
+    </div>
+  </div>
+</div>

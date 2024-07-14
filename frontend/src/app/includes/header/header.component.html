@@ -1,0 +1,33 @@
+
+<div class="m-4" class="header fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <div class="col-lg-4 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="/assets/images/EC-1.png">
+                </div>
+                <span>Eco-card</span>
+            </a>
+            <button type="button" class="navbar-toggler t-color" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar navbar-nav">
+                   
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <!-- Before Authorization -->
+                    <a *ngIf="!acService.IsLoggedIn()" class="nav-item nav-link scrollto" href="#service">Our Services</a>
+                    <a *ngIf="!acService.IsLoggedIn()" class="nav-item nav-link scrollto" href="#about">About</a>
+                    <a *ngIf="!acService.IsLoggedIn()" class="nav-item nav-link scrollto" href="#contact">Contact</a>
+                    <a *ngIf="!acService.IsLoggedIn()" class="nav-item nav-link scrollto"  routerLink="/auth"><i class="fa-solid fa-user-lock fa-10x" style="color: #ffffff;"></i></a>
+                        
+                    <!-- After Authorization -->
+                    <a *ngIf="acService.IsLoggedIn()" class="nav-item nav-link scrollto" href="/home">Home</a>
+                    <a *ngIf="acService.IsLoggedIn()" class="nav-item nav-link scrollto" href="" (click)="acService.logoutuser()">Logout</a>
+                    <a *ngIf="acService.IsLoggedIn()" class="nav-item getstarted scrollto" routerLink="/dashboard/user-profile">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

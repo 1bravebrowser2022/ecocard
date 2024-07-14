@@ -1,0 +1,144 @@
+<!-- This component is for dashboard sidenav  -->
+<mat-sidenav-container class="sidenav-container dashbordbody">
+  <!-- side nav Starts-->
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <!-- Project Logo Starts-->
+    <mat-toolbar><a routerLink=""> Eco-card</a></mat-toolbar>
+    <!-- Project Logo Ends-->
+
+    <!-- side nav menu list  -->
+    <mat-nav-list>
+
+
+       <!--Home start-->
+       <div>
+        <mat-list-item>
+          <div class="container" routerLink="/home">
+            <div class="row">
+              <div class="col-2"><mat-icon>keyboard_backspace</mat-icon></div>
+              <div class="col-8"><span> <a >Back</a></span></div>
+            </div>
+          </div>
+        </mat-list-item>
+      </div>
+      <!--Home ends-->
+
+      <!-- my Account  Starts-->
+      <div>
+        <mat-list-item class="sidehover">
+          <div class="container" routerLink="/dashboard/user-profile" routerLinkActive="active">
+            <div class="row" >
+              <div class="col-2"><mat-icon>account_circle</mat-icon></div>
+              <div class="col-8">
+                <span>
+                  <a> My Profile</a></span>
+              </div>
+            </div>
+          </div>
+        </mat-list-item>
+      </div>
+      <!-- my Account  ends-->
+     
+      <!-- Card secttion Starts -->
+      <div>
+        <mat-expansion-panel hideToggle [class.mat-elevation-z0]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>subtitles</mat-icon>
+            </mat-panel-title>
+            <mat-panel-description class="iconspace">
+              <span>Cards</span>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-nav-list>
+            <a mat-list-item class="container"  routerLink="/dashboard/mycard" routerLinkActive="active">
+              <span> <a > Your Cards</a></span>
+            </a>
+            <a mat-list-item class="container"  routerLink="/dashboard/createcard" routerLinkActive="active">
+              <span>
+                <a>Create Card</a></span>
+            </a>
+            <!-- <a mat-list-item>
+              <span> <a routerLink="/updelcard"> Update/Delete Card</a></span>
+            </a> -->
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </div>
+      <!-- Card secttion Ends-->
+
+      <!-- search cardsection  Starts-->
+      <div>
+        <mat-list-item>
+          <div class="container" routerLink="/dashboard/searchcard" routerLinkActive="active">
+            <div class="row">
+              <div class="col-2"><mat-icon>search</mat-icon></div>
+              <div class="col-8">
+                <span> <a >Search</a></span>
+              </div>
+            </div>
+          </div>
+        </mat-list-item>
+      </div>
+      <!-- search cardsection  Ends-->
+      <!-- Receive cardsection  Starts-->
+            <div>
+              <mat-list-item>
+                <div class="container" routerLink="/dashboard/receivedcard" routerLinkActive="active">
+                  <div class="row">
+                    <div class="col-2"><mat-icon>save_alt</mat-icon></div>
+                    <div class="col-8"><span> <a >Received Cards</a></span></div>
+                  </div>
+                </div>
+              </mat-list-item>
+            </div>
+        <!-- Receive cardsection  Ends-->
+        <!-- Geo fencing start-->
+        <div>
+          <mat-list-item>
+            <div class="container" routerLink="/dashboard/geofence" routerLinkActive="active">
+              <div class="row">
+                <div class="col-2"><mat-icon>my_location</mat-icon></div>
+                <div class="col-8"><span> <a >Geo Fence</a></span></div>
+              </div>
+            </div>
+          </mat-list-item>
+        </div>
+        <!-- Geo fencing ends-->
+
+         <!--Logout start-->
+         <div>
+          <mat-list-item>
+            <div class="container">
+              <div class="row">
+                <div class="col-2"><mat-icon>power_settings_new</mat-icon></div>
+                <div class="col-8"><span> <a (click)="acService.logoutuser()">Logout</a></span></div>
+              </div>
+            </div>
+          </mat-list-item>
+        </div>
+        <!--Logout ends-->
+
+    </mat-nav-list>
+    <!-- side nav menu list Ends -->
+  </mat-sidenav>
+  <!-- side nav Ends  -->
+
+  <!-- header  Starts-->
+  <mat-sidenav-content>
+    <!-- <mat-toolbar class="header"> -->
+      <button type="button" aria-label="Toggle" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon class="menuicon" aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span></span>
+    <!-- </mat-toolbar> -->
+
+    <!-- Body Starts-->
+    <div class="bgbody" *ngIf="display === true">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- Body Ends-->
+    
+  </mat-sidenav-content>
+  <!-- header  Ends-->
+</mat-sidenav-container>
